@@ -1,13 +1,19 @@
 const password=document.getElementById("pass")
+const confirm_password=document.getElementById("pass2")
 let username=document.getElementById("name");
-let button=document.getElementById("signup");
+var button=document.getElementById("signup");
 
 
-submit_id=button.addEventListener("click",(e)=>{
-    if((username.value=="")||(password.value=="")){
-        alert("invalid");
+button.addEventListener("click",(e)=>{
+    
+    if(password.value!=confirm_password.value){
+        alert("passowrd and confirm password should be same");
         return
     }
+    if((username.value=="")||(password.value==""||confirm_password.value=="")){
+        alert("invalid");
+        return
+    }    
     else{
     const data={"username":username.value,"password":password.value};
     $.ajax(
@@ -15,15 +21,22 @@ submit_id=button.addEventListener("click",(e)=>{
             url:"./php/register.php",
             method:"post",
             data:data,
-            datatype:"html",
+            datatype:"text",
             success:function(res){
-                console.log(res);
+                //console.log(res);
+                if(res=="1"){
+                    window.location.href="login.html";
+                }
+                
+                else if(res=="0"){
+                    alert("user already exits");
+                }
             }
             
         }
     );
-    
-    console.log(data);
+        
+    //console.log(data,password.value!=confirm_password.value);
 }
 
 });

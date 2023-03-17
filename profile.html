@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="./css/styles.css" type="text/css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/profile.js"  defer></script>
 </head>
 <body>
-    <div>
+    <div id="full_page">
+        <div id="header">
+            <input type="button" id="logout" value="LOGOUT"/>
+        </div>
         
-
-    </div>
+        <div id="form1">
+        
+            <h1>PROFILE</h1>
+            <h6>Edit <input type="checkbox" id="check"></h6>
+            <div id="edit_box" class="boxes"> 
+                <input type="text" id="name" placeholder="Enter Name"/>
+                <input type="text" id="email" placeholder="Enter Email"/>
+                <input type="text" id="age" placeholder="Enter Age"/>
+                <input type="text" id="college" placeholder="Enter College"/>
+                <input type="text" id="department" placeholder="Enter Department"/>
+                <input type="button" id="sumbit" value="SUBMIT"/>
+            </div>
+            <div id="show_box" class="boxes"> 
+                <div id="show_name" class="show"></div>
+                <div id="show_email" class="show"></div>
+                <div id="show_age" class="show"></div>
+                <div id="show_college" class="show"></div>
+                <div id="show_department" class="show"></div>
+                
+            </div>
+            </div>
+        </div>
+    
 </body>
 </html>
