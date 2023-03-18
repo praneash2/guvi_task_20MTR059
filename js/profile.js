@@ -74,8 +74,10 @@ function retreive_from_server(ID,box_number){
                 success:function(res){
                     let temp=(JSON.parse(res)[0]);
                     
+                    
                     if(temp["name"]==undefined){
                         temp["name"]="Enter Name";
+                        
                     }
                     if(temp["email"]==undefined){
                         temp["email"]="Enter Email";
