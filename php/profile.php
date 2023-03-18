@@ -5,7 +5,12 @@
     $db=$m->my_db;
     $userdata=$db->userdata;
     $check=$_POST["check"];
-    
+    // if (class_exists('Redis')) {
+    //     echo "Redis extension is enabled";
+    // } else {
+    //     echo "Redis extension is not enabled";
+    // }
+
     //echo "<p> {$name} {$email} ${age} ${college} ${department}</p>";
     function insert(){
         $name=$_POST["name"];
