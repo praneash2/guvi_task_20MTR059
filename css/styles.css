@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   padding: 0px;
   font-family: Sans-Serif;
-  background-color: #c7d3f7;
+  background-color: #ec3538;
 }
 #fullpage{
   min-height: 100%;
@@ -14,23 +14,25 @@ body {
   align-items: center;
 }
 
+.selects{
+  width: 250px;
+  height: 40px;
+  padding-left: 5px;
+  margin: 5px;
+  border-radius: 7px;
+  border: 1px solid ;
+}
 #form1 {
   margin: auto;
   margin-top: 10%;
-  background-color: white;
+  background-color: #dce0eb;
   width: 350px;
   padding: 20px;
   border-radius: 20px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px #2960f7;
+  box-shadow: 0px 0px 10px 0px #9ae10b;
 }
-#form1 h1 {
-  text-align: center;
-  margin: 0px;
-  color: rgb(98, 148, 172);
-  font-size: 27px;
-  margin-bottom: 20px;
-}
+
 #form1 input[type="text"],
 input[type="password"] {
   width: 250px;
@@ -38,10 +40,10 @@ input[type="password"] {
   padding-left: 5px;
   margin: 5px;
   border-radius: 7px;
-  border: 1px solid #2e64fe;
+  border: 1px solid #1d2028;
 }
 #form1 input[type="button"] {
-  background-color: #2e64fe;
+  background-color: #ec3538;
   color: white;
   border: none;
   width: 250px;
@@ -50,18 +52,25 @@ input[type="password"] {
   cursor: pointer;
 }
 
+#form1 h1 {
+  text-align: center;
+  margin: 0px;
+  color: rgb(195, 200, 202);
+  font-size: 27px;
+  margin-bottom: 20px;
+}
 .show{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #dce0eb;
+  background-color: #ec3538;
   width: 250px;
   height: 40px;
   padding-left: 5px;
   margin: 5px;
   border-radius: 7px;
-  border: 1px solid #2e64fe;
+  border: 1px solid #dce0eb;
   
 }
 
@@ -71,11 +80,13 @@ input[type="password"] {
   justify-content: center;
   align-items: center;
 }
-
+a {
+  text-decoration: none;
+}
 #header{
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-items: right;
-  background-color: blue;
+  background-color: #dce0eb;
 }
