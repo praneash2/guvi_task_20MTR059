@@ -1,45 +1,43 @@
 <?php 
 $username=$_POST["username"];
 $password=$_POST["password"];
-
-// Create a database connection
-$conn = mysqli_connect("sql12.freemysqlhosting.net", "sql12606640", "MDDkzfZjq4", "sql12606640");
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$conn = new mysqli("sql12.freemysqlhosting.net", "sql12606640", "MDDkzfZjq4", "sql12606640");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+$stmt = $conn->prepare("SELECT id FROM userdetails WHERE username like ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$stmt->store_result();
 
-// echo "Connected successfully to MySQL database.";
-
-$sql = "SELECT * FROM userdetails WHERE username='$username'";
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result)>0){
-    $sql = "SELECT * FROM userdetails WHERE username='$username' and  password='$password'";
-    $result = mysqli_query($conn, $sql);
-    $id="-1";
-    while ($row = mysqli_fetch_assoc($result)) {
-        
-        $id= '' . $row['id'] . '';
-        
-        
-    }
+$stmt->bind_result($res);
+if($stmt->num_rows>0){
+    $stmt2= $conn->prepare("SELECT id FROM userdetails WHERE username like ? AND password like ?");
+    $stmt2->bind_param("ss", $username,$password);
+    $stmt2->execute();
     
-    if(mysqli_num_rows($result)>0){
+    $stmt2->store_result();
+    
+    $stmt2->bind_result($id);
+    if($stmt2->num_rows>0){
         
         
-        echo "1,'{$id}'"; //eco 1 means user is authenticated
+        while($stmt2->fetch()){
+            $ID=''.$id.'';
+        }
+        echo "1,'{$ID}'";
     }
     else{
-       
-        
-        echo "2,'{-1}'"; // eco 2 means password is wrong
+        echo "2,'{-1}'";
     }
-    
+    $stmt2->close();
 }
 else{
-    
-    echo "3,'{-1}'"; //accound does not exits
+    echo "3,'{-1}'";
 }
 
-mysqli_close($conn);
+
+$stmt->close();
+$conn->close();
+
 ?>

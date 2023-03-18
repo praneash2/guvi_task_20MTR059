@@ -33,7 +33,7 @@ submit_id=button.addEventListener("click",(e)=>{
                 success:function(res){
                     console.log(res)
                     res=res.split(',');
-                    console.log(res);
+                    console.log(res[0]);
                     if(res[0]=="1"){
                         
                         
@@ -54,7 +54,7 @@ submit_id=button.addEventListener("click",(e)=>{
     } 
     
     
-    console.log(data);
+    
 }
 
 });

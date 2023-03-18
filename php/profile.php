@@ -1,7 +1,7 @@
 
 <?php
-    require '../vendor/autoload.php';
-    $m = new MongoDB\Client("mongodb://localhost:27017");
+    require '../assets/vendor/autoload.php';
+    $m = new MongoDB\Client("mongodb+srv://praneashk20mts:9442681811@cluster0.ntkkh0c.mongodb.net/test");// we can enclose this in a evn file for safety but as instructed the folders should not be added i mentioned it here itself
     $db=$m->my_db;
     $userdata=$db->userdata;
     $check=$_POST["check"];

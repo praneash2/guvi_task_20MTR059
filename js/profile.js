@@ -73,6 +73,22 @@ function retreive_from_server(ID,box_number){
                 datatype:"JSON",
                 success:function(res){
                     let temp=(JSON.parse(res)[0]);
+                    
+                    if(temp["name"]==undefined){
+                        temp["name"]="Enter Name";
+                    }
+                    if(temp["email"]==undefined){
+                        temp["email"]="Enter Email";
+                    }
+                    if(temp["age"]==undefined){
+                        temp["age"]="Enter Age";
+                    }
+                    if(temp["college"]==undefined){
+                        temp["college"]="Enter College";
+                    }
+                    if(temp["department"]==undefined){
+                        temp["department"]="Enter Department";
+                    }
                     if(box_number=="1"){ // if box_number is 1 then edit_box
                     show_name.innerText=temp["name"];
                     show_email.innerText=temp["email"];

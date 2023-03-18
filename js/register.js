@@ -23,12 +23,14 @@ button.addEventListener("click",(e)=>{
             data:data,
             datatype:"text",
             success:function(res){
-                //console.log(res);
-                if(res=="1"){
+                
+                res=res.toString();
+                console.log(res,res==1,res==0);
+                if(res==1){
                     window.location.href="login.html";
                 }
                 
-                else if(res=="0"){
+                else if(res==0){
                     alert("user already exits");
                 }
             }
